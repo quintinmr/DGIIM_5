@@ -21,10 +21,17 @@
 
 ![Enunciado](hu.jpg)
 
-En el presente documento se recoge una lista de historias de usuario, extraídas del enunciado en el que se especifica la funcionalidad del sistema. Además se han prorizado dichas historias de usuario, considerando proridades 1 (alta), 2 (media) y 3 (baja).
+En el presente documento se recoge una **lista de historias de usuario**, extraídas del enunciado en el que se especifica la funcionalidad del sistema. Además se han prorizado dichas historias de usuario, considerando **proridades 1 (alta), 2 (media) y 3 (baja)**.
 El formato que se ha seguido para las HU es el siguiente:
 
+<div style="text-align: center;">
+
 >   **Como X, quiero Y, para Z**
+
+</div>
+
+Donde **X** indica un rol de usuario, **Y** el eje de la historia (la actividad), y **Z** el propósito. Se han identificado los siguientes roles de usuario: **socio, bibliotecario y sistema**.
+
 
 ### **Prioridad 1**
 
