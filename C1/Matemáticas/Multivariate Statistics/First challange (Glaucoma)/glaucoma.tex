@@ -37,34 +37,135 @@
 
 Quintín Mesa Romero \par
 
-
 \end{titlepage}
 
-\section{Index}
-\section{Abstract}
+
 \section{Introduction}
 
 % In this section we introduce the problem we have studied and why it is interesting to solve it. Furthermore,
 % we explain the problem's context, what do we know about it, what we don't know, and finally, what it wouldd 
 % represent if the results that wh have obtained, throw light to that last question.
 
-Glaucoma is a leading cause of irreversible blindness worldwide. It is a disease of 
-a progressive optic neuropathy with loss of retinal neurons and their axons, which can
-result in blindness in case of untreatment[1][2]. It 
+Glaucoma is a leading cause of irreversible blindness worldwide. It is a disease of a progressive op-
+tic neuropathy with loss of retinal neurons and their axons, which can result in blindness in case of
+untreatment[1][2]. In short, it is a group of diseases that kill retinal ganglion cells [2].
+
+The strongest known risk factor is high IOP (Intraocular Pressure), but it is not the only factor responsi-
+ble for glaucoma [2]. In fact, people with myopia greater than five dioptres, people aged 60 years or more,
+people with thin cornea, and even people with different skin type, such as africans or afro-caribbean are
+more likely to develop glaucoma. Of course, having family history multiplies the risk of developing the
+desease [3].
+
+Given that there are about 80 million people suffering from glaucoma, and it is estimated that over 112
+million individuals will have it by 2040, it is reasonable to think that there is a treatment or an operation
+to reverse the disease before it is too late [4]. Indeed, there is a surgery based on laser technology which is 
+being applied to people with glaucoma[5]. 
+
+From a research point of view, in relation to this surgery, we wonder whether the pre-surgery condition is related, 
+in any way, to the long-term progression. 
+For this purpose, we have studied a dataset with information of 121 patients who underwent glaucoma surgery 
+using laser technology, in which variables have been meassured before and after the surgery over a three-month 
+period at different time intervals.
+
+Studying this relationship is crucial, primarily because it can inform better treatment strategies and patient 
+outcomes, and clinicians can better predict which patients are more likely to benefit from laser surgery versus 
+those who may need alternative or additional interventions, in order to improve their lives.
 
 
 \section{Methods and techniques}
+
+\subsection{Data Collection, Preparation and Cleaning}
+
+The data from the 121 patients have been stored in an Excel file. This dataset includes clinical variables
+related to presurgical conditions and post-surgical outcomes after the laser-based surgery.
+The dataset has been processed, prepared and cleaned using the \textbf{R} statistical environment.
+
+First of all, we have to load the library \textbf{readxl}:
+
+\begin{center}
+    {\includegraphics[width=0.7\textwidth]{imgs/img1.png}\par}
+\end{center}
+
+
+Now, we are ready to load the dataset. For this purpose, we use the function \textbf{read\_excel}:
+
+\begin{center}
+    {\includegraphics[width=0.7\textwidth]{imgs/img2.png}\par}
+\end{center}
+
+
+Once the dataset is loaded, it is advisable to check the structure of the data, and for this, we
+use \textbf{str}:
+
+\begin{center}
+    {\includegraphics[width=0.6\textwidth]{imgs/img3.png}\par}
+\end{center}
+
+Also, in order to not to alter the original dataset, it is advisable to make a copy and work with it in the
+future. We will load the variable names from the dataset too. For that, we make:
+
+\begin{center}
+    {\includegraphics[width=0.6\textwidth]{imgs/img5.png}\par}
+\end{center}
+
+It is easy to see that there are missinng values, so we have to handle them. We can use the 
+function \textbf{colSums} with the argument \textbf{is.na(data\_glaucoma)}, which tells us the number
+NA values that there are for each variable:
+
+\begin{center}
+    {\includegraphics[width=0.6\textwidth]{imgs/img4.png}\par}
+\end{center}
+
+
+There are different options for handling \textbf{NA} data. One could be simply removing the rows with missing values, but
+it might lead to the loss of valuable data and even statistical power. Other option is to replace missing values
+with the mean or the \textbf{median}. We will used the last one; we will replace the missing data by the median of the
+corresponding variable. To do this, we have made a for loop in which for each variable with missing values, each of
+these NA values are replaced by the median of the rest of the values of the corresponding variable. 
+
+\begin{center}
+    {\includegraphics[width=0.85\textwidth]{imgs/img6.png}\par}
+\end{center}
+
+We check the change:
+
+\begin{center}
+    {\includegraphics[width=1\textwidth]{imgs/img7.png}\par}
+
+    {\includegraphics[width=0.85\textwidth]{imgs/img8.png}\par}
+\end{center}
+
+
+Then, we convert the \textbf{categorical} variables of the dataset into \textbf{factor} type:
+
+\begin{center}
+    {\includegraphics[width=0.85\textwidth]{imgs/img9.png}\par}
+\end{center}
+
+Once all these changes have been applied to the data, we obtain:
+
+\begin{center}
+    {\includegraphics[width=0.85\textwidth]{imgs/img11.png}\par}
+    {\includegraphics[width=0.85\textwidth]{imgs/img10.png}\par}
+\end{center}
+
+\subsection{Outliers Detection and Treatment}
+
+
+
 \section{Results}
 \section{Conclusions}
 
 \section{References}
 
 \begin{itemize}
-    \item [1] Glaucoma https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8473801/, 
-    \item [2]https://eyes.arizona.edu/sites/default/files/glaucoma.pdf
+    \item [ [1] ] Glaucoma https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8473801/
+    \item [[2]] https://eyes.arizona.edu/sites/default/files/glaucoma.pdf
+    \item [[3]] https://www.clinicbarcelona.org/en/assistance/diseases/glaucoma/risk-factors-and-causes
+    \item [[4]] https://www.glaucomapatients.org/basic/statistics/, 
+    https://glaucoma.org/articles/glaucoma-worldwide-a-growing-concern 
+    \item [[5]] https://glaucoma.org/treatment/laser
 
 \end{itemize}
-[3](Number of people with glaucoma worldwide) https://www.glaucomapatients.org/basic/statistics/, 
-https://glaucoma.org/articles/glaucoma-worldwide-a-growing-concern
 
 \end{document}

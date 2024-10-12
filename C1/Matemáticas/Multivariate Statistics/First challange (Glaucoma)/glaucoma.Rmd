@@ -1,0 +1,72 @@
+---
+title: "First challenge - Glaucoma"
+---
+
+# Load necessary libraries
+```{r}
+library(readxl)  # for reading excel files
+```
+
+#Load the dataset
+```{r}
+data_glaucoma<-read_excel("Glaucoma_DB.xlsx", sheet="DATOS")
+```
+
+# Check the structure of the dataset
+```{r}
+str(data_glaucoma)
+```
+
+# Check for missing values
+```{r}
+missing_values <- colSums(is.na(data_glaucoma))
+print(missing_values)
+```
+
+
+
+# copy of the dataset
+```{r}
+data_glaucoma_copy <- data_glaucoma
+```
+
+
+# replacing missing values by the median
+
+```{r}
+for (col_name in names(missing_values[missing_values > 0])) {
+    data_glaucoma_copy[[col_name]][is.na(data_glaucoma_copy[[col_name]])] <- median(data_glaucoma_copy[[col_name]], na.rm = TRUE)
+}
+```
+
+```{r}
+head(data_glaucoma_copy,10)
+```
+
+```{r}
+colSums(is.na(data_glaucoma_copy))
+```
+
+
+
+```{r}
+data_glaucoma_copy$SEXO <- factor(data_glaucoma_copy$SEXO, levels = c("1", "0"),labels = c("Hombre", "Mujer"))
+
+data_glaucoma_copy$OJO <- factor(data_glaucoma_copy$OJO, levels = c("0","1"), labels = c("Izdo", "dcho"))
+
+data_glaucoma_copy$TIPO_GLAUCOMA <- factor(data_glaucoma_copy$TIPO_GLAUCOMA, levels = c("0","1","2", "3","4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14","15","16"), labels = c("PIGMENTARIO", "GPPA", "GPAA", "GLAUCO PIGMENT","GPAC", "G.PSEUDOEX", "SD DISPERSION PIGMENTARIA","GLAUCOMA CONGENITO", "GLAUCOMA POSTRABECULAR", "HTO", "CPAC", "GSAA", "GS PXE", "GCS","HTO PIGMENTARI", "GPAA?miópico", "GPAA?"))
+
+data_glaucoma_copy$CIRUJIA_PREVIA <- factor(data_glaucoma_copy$CIRUJIA_PREVIA, levels = c("1", "0"), labels = c("No", "Si"))
+
+data_glaucoma_copy$DOLOR <- factor(data_glaucoma_copy$DOLOR, levels = c("0","1"), labels = c("Sí", "No"))
+
+
+```
+
+```{r}
+str(data_glaucoma_copy)
+```
+
+
+
+
