@@ -109,7 +109,7 @@ future. We will load the variable names from the dataset too. For that, we make:
 \end{center}
 
 It is easy to see that there are missinng values, so we have to handle them. We can use the 
-function \textbf{colSums} with the argument \textbf{is.na(data\_glaucoma)}, which tells us the number
+function \textbf{colSums} with the argument \textbf{is.na(data\_glaucoma)}, which tells us the number of
 NA values that there are for each variable:
 
 \begin{center}
@@ -149,12 +149,189 @@ Once all these changes have been applied to the data, we obtain:
     {\includegraphics[width=0.85\textwidth]{imgs/img10.png}\par}
 \end{center}
 
-\subsection{Outliers Detection and Treatment}
+Finally, since there are some quantitative variables with non-numerical values (which makes them to be 
+considered by R as char type), I have decided to subsitute these non-numerical values by the mediane of 
+the rest of the numeric values of the variable, instead of removing them, which would have been another
+solution to this problem.
+
+The quantitative variables that R has considered are:
+
+\begin{center}
+    {\includegraphics[width=0.85\textwidth]{imgs/img23.png}\par}
+\end{center}
+
+We need to do the substitution to the variables  CUADRANTES, PIO\_NORMAL, PIO\_1\_MES, FARMACOS\_PRE. For that purpose, we do:
+
+\begin{center}
+    {\includegraphics[width=0.85\textwidth]{imgs/img24.png}\par}
+    {\includegraphics[width=0.85\textwidth]{imgs/img25.png}\par}
+    {\includegraphics[width=0.85\textwidth]{imgs/img27.png}\par}
+    {\includegraphics[width=0.85\textwidth]{imgs/img26.png}\par}
+\end{center}
+
+Eventually, the structure of the dataset is as follows:
+
+\begin{center}
+    {\includegraphics[width=0.85\textwidth]{imgs/img28.png}\par}
+\end{center}
+
+\subsection{Outliers detection and treatment}
+
+With regard to the detection of outliers, if we are studying quantitative variables, an informative
+way to detect them is with a boxplot graphic. However, this is not the case with categorical 
+variables.
+
+\begin{center}
+    {\includegraphics[width=0.85\textwidth]{imgs/img22.png}\par}
+\end{center}
+
+So, we need something that throws light to the outliers of all the variables. The decision we have 
+taken about outliers is that we are going to modify them by the mean of their variables. 
+
+For the purpose of detecting the outliers, we will use the IQR (Interquartile Range), which is 
+defined as the difference of the third and the firt quartiles ($Q_{3}-Q_{1}$), by means of a function
+taken from the practice guide, which detects the outliers in each variables and subsitutes then by
+the mean of their variables:
+\begin{center}
+    {\includegraphics[width=0.85\textwidth]{imgs/img29.png}\par}
+\end{center}
+
+We apply that function to all the quantitative variables:
+
+\begin{center}
+    {\includegraphics[width=0.85\textwidth]{imgs/img30.png}\par}
+\end{center}
+
+and obtain:
+
+\begin{center}
+    {\includegraphics[width=0.7\textwidth]{imgs/img31.png}\par}
+\end{center}
 
 
+\subsection{Study of Correlated Variables}
 
-\section{Results}
-\section{Conclusions}
+Once all data from the dataset is treated, we can visualize its correlation matrix, in order to draw 
+conclusions according to the variables.
+
+\begin{center}
+    {\includegraphics[width=1.0\textwidth]{imgs/img32.png}\par}
+\end{center}
+
+In order to illustrate the information given by the correlation matrix, Here 
+we present the heatmap of the correlation matrix, where the most related variables 
+are shown in reddish tones:
+\begin{center}
+    {\includegraphics[width=0.6\textwidth]{imgs/img33.png}\par}
+\end{center}
+
+Visually, we can infer which variables are related the most, but, we prefer to extract that
+information easily, so, taking advantage of the fact that R is a programming language, we do what follows:
+
+\begin{center}
+    {\includegraphics[width=0.85\textwidth]{imgs/img34.png}\par}
+\end{center}
+
+and obtain:
+
+\begin{center}
+    {\includegraphics[width=0.85\textwidth]{imgs/img35.png}\par}
+\end{center}
+\hspace{1cm}
+
+We observe a certain relationship between the variables 
+\begin{itemize}
+    \item (N\_IMPACTOS,ENERGIA\_TOTAL), (ENERGIA\_IMPACTO,ENERGIA\_TOTAL)
+    \item (EDAD, PIO\_NORMAL), (EDAD\_PIO\_1\_MES), (EDAD, PIO\_3\_MES), (EDAD, FARMACOS\_1\_MES)
+    \item (PIO\_1\_SEMANA, PIO\_1\_MES), (PIO\_1\_MES, PIO\_3\_MES), (PIO\_1\_MES,FARMACOS\_1\_MES), 
+    (FARMACOS\_1\_MES,FARMACOS\_3\_MES), (FARMACOS\_PRE,FARMACOS\_1\_MES)
+\end{itemize}
+
+Once we have all this information about the variables, we should interpret it, in order to draw some 
+conclusions about the question we made at the beginning.
+
+\hspace{1cm}
+\subsection{Data Analysis with R}
+
+It can be interesting to keep an eye on the correlations of the variable \textbf{EDAD} and 
+\textbf{PIO} variables, as both are factors of risk when suffering from glaucoma. Also, studying 
+a bit more the relation between que \textbf{PIO} variables, could give us more information about
+the increasing/decreasing of the Intraocular Pressure after the surgery. 
+Also, it would be interesting to interpret the realtion between \textbf{PIO} and \textbf{FARMACOS}.
+
+For this pursope, I have written R code, with the help of some blogs, books, tutorials, whose references
+I leave below, and also, I have used ChatGPT AI for making better the structure of the code and to know
+the meaning and use of some funtions of R which are a bit advanced compared to my R skills. I know that I
+could have done it easily, with the tools I have at the moment, but I preferred to investigate the R language 
+and discover all the potential it has, because it will be beneficial for my future work.
+
+\hspace{1cm}
+
+\begin{center}
+    {\includegraphics[width=0.85\textwidth]{imgs/img36.png}\par}
+\end{center}
+
+\hspace{1cm}
+
+Explanation of the code above:
+
+Since we want to analyze the effect of age on intraocular pressure, we have added a column called
+"AGE\_GROUP", whose values are ranges of age, between 0 and more than 71. For that purpose, we have categorized 
+the variable AGE by means of the function cut. Once we have the age groups, for each one we calculate the 
+mean intraocular pressure, for what we use the functions group\_by and summarise from the library dplyr, which enable us to 
+calculate descriptive statistics, such us means, sums, etc., for each group, according to the chosen variables.
+
+Now, we have the intraocular pressure of each age group, which would give us significant information.
+
+Then, we want to identify the number of patients who experienced an increase in intraocular pressure after the
+surgery. So, for that motivation, we use the function mutate from the library dplyr, which enables us to add new columns to 
+a data frame, or modify existing columns,on the basis of the values of other columns. With this function, we have added two new columns
+related to the increase of the PIO, from the first week to the first moth, and from the first month to the third.
+After that, we have calculated the number of patients who experienced the increase of PIO, by means of the function filter, from 
+dplyr, which, given a condition, shows the data that satisfies it.
+
+After that, we want to dig into the relationship between PIO and medication, for what we have extracted the correlation
+values between these variables (despite of the fact that we have just obtained them above, we wanted to use the function cor, applied to 
+concrete variables, instead to all the quantitative, as we did before). These correlations will give us pretty significant information.
+
+Finally, as a visual support, we have used a boxplot to see the distribution of PIO across age groups.
+
+The result of the execution of the code is the following:
+
+\begin{center}
+    {\includegraphics[width=0.85\textwidth]{imgs/img37.png}\par}
+    {\includegraphics[width=0.85\textwidth]{imgs/img38.png}\par}
+    {\includegraphics[width=0.85\textwidth]{imgs/img39.png}\par}
+\end{center}
+
+
+\section{Results \& Conclusions}
+
+Once we have analyzed the dataset, the correlation of the variables, and we have extracted significant information,
+we are ready to make a series of statements that will lead us to answer the question we asked ourselves in the beginning: 
+whether the pre-surgery condition is related, in any way, to the long-term progression.
+
+\begin{itemize}
+    \item The trend observed in mean intraocular pressure according to age groups \textbf{reinforces the idea that older 
+    patients are more likely to have higher IOP}. This suggests that preoperative conditions should be carefully 
+    evaluated in this group, as their age may increase the risk of postoperative complications.
+    \item It has been observed that \textbf{36 patients (around 30\%) experienced an increase of the IOP after the surgery}. This 
+    suggests that the surgery does not result in the expected improvement in IOP. This suggests that patients with more serious
+    pre-existing conditions are more susceptible to experience an increase in postoperative IOP.
+    \item The moderate \textbf{correlation between the use of  preoperative medication and the use of them after 1 month} (0.58), 
+    shows that patients who required more drugs before the surgery, tend to continue to need medication after the surgery. 
+    This suggests that preoperative conditions may be a good predictor of the need for subsequent treatment and, therefore, the 
+    efficacy of surgery may be influenced by the patient's preoperative conditions.
+    \item The \textbf{correlation between PIO and the use of medication at the firt month} (0.56), suggests that patients who present
+    a higer IOP after the surgery, tend to need more medication. So, it is possible that patients with serious preoperative conditions 
+    need a more aggressive approach.
+
+\end{itemize}
+
+In view of the results obtained and analyzed, we conclude, that there is evidence that conditions prior to surgery have a significant relationship with conditions after 
+surgery.
+
+\newpage
 
 \section{References}
 
@@ -165,6 +342,10 @@ Once all these changes have been applied to the data, we obtain:
     \item [[4]] https://www.glaucomapatients.org/basic/statistics/, 
     https://glaucoma.org/articles/glaucoma-worldwide-a-growing-concern 
     \item [[5]] https://glaucoma.org/treatment/laser
+    \item [[6]] https://es.r4ds.hadley.nz/ 
+    \item [[7]] https://adv-r.hadley.nz/functions.html
+    \item [[8]] https://diytranscriptomics.com/Reading/files/The%20Art%20of%20R%20Programming.pdf
+    \item [[9]] https://rsanchezs.gitbooks.io/rprogramming/content/chapter9/
 
 \end{itemize}
 
