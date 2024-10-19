@@ -67,6 +67,414 @@ data_glaucoma_copy$DOLOR <- factor(data_glaucoma_copy$DOLOR, levels = c("0","1")
 str(data_glaucoma_copy)
 ```
 
+# DESCRIPTIVE STATISTICS (QUANTITATIVE VARIABLES)
+
+# N_IMPACTOS
+```{r}
+descr(N_IMPACTOS)
+```
+
+
+```{r}
+# Histogram, density and boxplot
+# Remember that package 'ggplot2' is required
+p1<-ggplot(data_glaucoma_copy,aes(x=N_IMPACTOS))+geom_density()+
+labs(title = "Density function of N_IMPACTOS",x="N_IMPACTOS",y="Values")
+p2<-ggplot(data_glaucoma_copy,aes(x=N_IMPACTOS))+geom_histogram()+
+labs(title = "Histogram of N_IMPACTOS",x="N_IMPACTOS",y="Values")
+p3<-ggplot(data_glaucoma_copy,aes(x=N_IMPACTOS))+
+geom_boxplot(outlier.colour="red", outlier.shape=1,outlier.size=2)+
+coord_flip()+labs(title = "Boxplot of N_IMPACTOS",x="Values",y="")
+# This function controls the graphical output device
+# Remember that package 'ggpubr' is required
+ggarrange(p1,p2,p3, nrow=1, common.legend = FALSE)
+```
+
+# PIO_NORMAL
+```{r}
+# We iidentify the numeric values of the column
+es_numerico <- suppressWarnings(!is.na(as.numeric(data_glaucoma_copy$PIO_NORMAL)))
+# We calculate the mediane of the numeric values
+mediana_numericos <- median(as.numeric(data_glaucoma_copy$PIO_NORMAL[es_numerico]))
+# Sustituimos los valores no numéricos por la mediana
+data_glaucoma_copy$PIO_NORMAL[!es_numerico] <- mediana_numericos
+# pasamos a numéricos
+data_glaucoma_copy$PIO_NORMAL <- as.numeric(data_glaucoma_copy$PIO_NORMAL)
+```
+
+
+```{r}
+# Histogram, density and boxplot
+# Remember that package 'ggplot2' is required
+p1<-ggplot(data_glaucoma_copy,aes(x=CUADRANTES_limpio))+geom_density()+
+labs(title = "Density function of CUADRANTES",x="CUADRANTES",y="Values")
+p2<-ggplot(data_glaucoma_copy,aes(x=CUADRANTES_limpio))+geom_histogram()+
+labs(title = "Histogram of CUADRANTES",x="CUADRANTES",y="Values")
+p3<-ggplot(data_glaucoma_copy,aes(x=CUADRANTES_limpio))+
+geom_boxplot(outlier.colour="red", outlier.shape=1,outlier.size=2)+
+coord_flip()+labs(title = "Boxplot of CUADRANTES",x="Values",y="")
+# This function controls the graphical output device
+# Remember that package 'ggpubr' is required
+ggarrange(p1,p2,p3, nrow=1, common.legend = FALSE)
+```
+
+
+# ENERGIA_IMPACTO
+
+```{r}
+# Identificamos qué valores son numéricos y cuáles no
+es_numerico <- suppressWarnings(!is.na(as.numeric(ENERGIA_IMPACTO)))
+# Calculamos la mediana de los valores numéricos
+mediana_numericos <- median(as.numeric(ENERGIA_IMPACTO[es_numerico]))
+# Sustituimos los valores no numéricos por la mediana
+ENERGIA_IMPACTO[!es_numerico] <- mediana_numericos
+# pasamos a numéricos
+ENERGIA_IMPACTO <- as.numeric(ENERGIA_IMPACTO)
+
+descr(ENERGIA_IMPACTO)
+```
+
+```{r}
+# Verificamos que ENERGIA_IMPACTO sea numérico
+data_glaucoma_copy$ENERGIA_IMPACTO <- as.numeric(as.character(data_glaucoma_copy$ENERGIA_IMPACTO))
+
+# Histogram, density and boxplot
+p1 <- ggplot(data_glaucoma_copy, aes(x = ENERGIA_IMPACTO)) +
+  geom_density() + labs(title = "Density function of ENERGIA_IMPACTO", x = "ENERGIA_IMPACTO", y = "Density")
+p2 <- ggplot(data_glaucoma_copy, aes(x = ENERGIA_IMPACTO)) +
+  geom_histogram() +labs(title = "Histogram of ENERGIA_IMPACTO", x = "ENERGIA_IMPACTO", y = "Count")
+p3 <- ggplot(data_glaucoma_copy, aes(x = ENERGIA_IMPACTO)) +
+  geom_boxplot(outlier.colour = "red", outlier.shape = 1, outlier.size = 2) +
+  coord_flip() + labs(title = "Boxplot of ENERGIA_IMPACTO", x = "ENERGIA_IMPACTO", y = "")
+
+ggarrange(p1, p2, p3, nrow = 1, common.legend = FALSE)
+
+```
+
+# ENERGIA_TOTAL
+```{r}
+descr(ENERGIA_TOTAL)
+```
+
+
+```{r}
+# Histogram, density and boxplot
+# Remember that package 'ggplot2' is required
+p1<-ggplot(data_glaucoma_copy,aes(x=ENERGIA_TOTAL))+geom_density()+
+labs(title = "Density function of ENERGIA_TOTAL",x="ENERGIA_TOTAL",y="Values")
+p2<-ggplot(data_glaucoma_copy,aes(x=ENERGIA_TOTAL))+geom_histogram()+
+labs(title = "Histogram of ENERGIA_TOTAL",x="ENERGIA_TOTAL",y="Values")
+p3<-ggplot(data_glaucoma_copy,aes(x=ENERGIA_TOTAL))+
+geom_boxplot(outlier.colour="red", outlier.shape=1,outlier.size=2)+
+coord_flip()+labs(title = "Boxplot of ENERGIA_TOTAL",x="Values",y="")
+# This function controls the graphical output device
+# Remember that package 'ggpubr' is required
+ggarrange(p1,p2,p3, nrow=1, common.legend = FALSE)
+
+```
+
+```{r}
+table(CUADRANTES)
+```
+
+
+
+```{r}
+# select the quantitative variables of the dataset
+quantitative <- data_glaucoma_copy[sapply(data_glaucoma_copy, is.numeric)]
+quantitative
+# scale the data
+sca <- scale(quantitative)
+
+# boxplot for all the quantitative variables together
+boxplot(sca, 
+        main = "Outliers in Quantitative Variables", 
+        xlab = "All Quantitative Variables", 
+        ylab = "Scaled Values", 
+        col = rainbow(ncol(sca)),
+        names = colnames(quantitative)) 
+
+```
+
+
+
+```{r}
+str(data_glaucoma_copy)
+```
+
+
+
+
+# OUTLIERS DETECTION
+
+```{r}
+
+# Recursive function that modifies outliers by the mean of their variable
+outlier<-function(data,na.rm=T){
+  
+  H<-1.5*IQR(data)
+  data[data<quantile(data,0.25,na.rm = T)-H]<-NA
+  data[data>quantile(data,0.75, na.rm = T)+H]<-NA
+  data[is.na(data)]<-mean(data, na.rm = T)
+  H<-1.5*IQR(data)
+  
+  if (TRUE %in% (data<quantile(data,0.25,na.rm = T)-H) |
+    TRUE %in% (data>quantile(data,0.75,na.rm = T)+H))
+    outlier(data)
+  else
+    return(data)
+}
+
+```
+
+```{r}
+# This data.frame is to preserve original data once the outliers are modified
+data_glaucoma_copy_aux<-data_glaucoma_copy
+
+# Call to outlier function for each variable identified with outliers
+data_glaucoma_copy_aux$N_IMPACTOS<-outlier(data_glaucoma_copy_aux$N_IMPACTOS)
+data_glaucoma_copy_aux$CUADRANTES<-outlier(data_glaucoma_copy_aux$CUADRANTES)
+data_glaucoma_copy_aux$ENERGIA_IMPACTO<-outlier(data_glaucoma_copy_aux$ENERGIA_IMPACTO)
+data_glaucoma_copy_aux$ENERGIA_TOTAL<-outlier(data_glaucoma_copy_aux$ENERGIA_TOTAL)
+data_glaucoma_copy_aux$PIO_PRE_SLT<-outlier(data_glaucoma_copy_aux$PIO_PRE_SLT)
+data_glaucoma_copy_aux$PIO_1_SEMANA<-outlier(data_glaucoma_copy_aux$PIO_1_SEMANA)
+data_glaucoma_copy_aux$PIO_1_MES<-outlier(data_glaucoma_copy_aux$PIO_1_MES)
+data_glaucoma_copy_aux$PIO_3_MES<-outlier(data_glaucoma_copy_aux$PIO_3_MES)
+data_glaucoma_copy_aux$FARMACOS_PRE<-outlier(data_glaucoma_copy_aux$FARMACOS_PRE)
+data_glaucoma_copy_aux$FARMACOS_1_MES<-outlier(data_glaucoma_copy_aux$FARMACOS_1_MES)
+data_glaucoma_copy_aux$FARMACOS_3_MES<-outlier(data_glaucoma_copy_aux$FARMACOS_3_MES)
+data_glaucoma_copy_aux$PIO_NORMAL<-outlier(data_glaucoma_copy_aux$PIO_NORMAL)
+```
+
+
+
+```{r}
+# select the quantitative variables of the dataset
+quantitative <- data_glaucoma_copy_aux[sapply(data_glaucoma_copy_aux, is.numeric)]
+# scale the data
+sca <- scale(quantitative)
+
+# boxplot for all the quantitative variables together
+boxplot(sca, 
+        main = "Outliers in Quantitative Variables", 
+        xlab = "All Quantitative Variables", 
+        ylab = "Scaled Values", 
+        col = rainbow(ncol(sca)),
+        names = colnames(quantitative)) 
+```
+
+
+```{r}
+missing_values <- colSums(is.na(data_glaucoma_copy_aux))
+
+for (col_name in names(missing_values[missing_values > 0])) {
+    data_glaucoma_copy_aux[[col_name]][is.na(data_glaucoma_copy_aux[[col_name]])] <- median(data_glaucoma_copy_aux[[col_name]], na.rm = TRUE)
+}
+```
+
+
+# correlation matrix
+```{r}
+quant<-data_glaucoma_copy[sapply(data_glaucoma_copy, is.numeric)]
+correlation_matrix<-cor(quant)
+correlation_matrix
+
+```
+
+# heatmap
+
+```{r}
+library(pheatmap)
+# Heatmap
+pheatmap(correlation_matrix, 
+         color = colorRampPalette(c("blue", "white", "red"))(50),
+         main = "Correlation Matrix's Heatmap",
+         display_numbers = TRUE)
+
+```
+
+
+
+# Correlated variables
+
+```{r}
+# Establish correlation threshold
+threshold <- 0.50
+
+# Convert correlation matrix, mantaining only the correlations higher than the threshold
+high_cor <- which(correlation_matrix > threshold, arr.ind = TRUE)
+
+# Filter so that correlations with themselves (diagonal of the matrix) are not included.
+high_cor <- high_cor[high_cor[, 1] < high_cor[, 2], ]
+
+# Show the pairs of correlated variables
+high_cor_results <- data.frame(
+  Variable1 = rownames(correlation_matrix)[high_cor[, 1]],
+  Variable2 = colnames(correlation_matrix)[high_cor[, 2]],
+  Correlation = correlation_matrix[high_cor]
+)
+
+# Result
+print(high_cor_results)
+
+```
+
+
+```{r}
+corr_age <- correlation_matrix["EDAD", ]
+corr_age <- sort(corr_age, decreasing = TRUE)
+print(corr_age)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+library(dplyr)
+
+# Analyzing the effect of age on intraocular pressure (PIO)
+# We convert age to categories to see the effect of age groups
+data_glaucoma_copy$AGE_GROUP <- cut(data_glaucoma_copy$EDAD, 
+                                    breaks = c(0, 40, 50, 60, 70, Inf), 
+                                    labels = c("0-40", "41-50", "51-60", "61-70", "71+"), 
+                                    right = FALSE)
+
+# Calculating the mean intraocular pressure for each age group
+# I will use %>%, which is a functions pipe (the output of
+# one function is the input of another one ), and the function group_by
+pio_by_age_group <- data_glaucoma_copy %>%
+  group_by(AGE_GROUP) %>%
+  summarise(mean_PIO = mean(PIO_NORMAL, na.rm = TRUE))
+
+# Results
+print(pio_by_age_group)
+
+# Identifying patients who experienced an increase in intraocular pressure after laser surgery
+# Calculating the difference in PIO between 1 week, 1 month, and 3 months
+data_glaucoma_copy <- data_glaucoma_copy %>%
+  mutate(PIO_increase_1week_to_1month = PIO_1_MES - PIO_1_SEMANA,
+         PIO_increase_1month_to_3month = PIO_3_MES - PIO_1_MES)
+
+# We filter patients who had an increase in intraocular pressure
+increased_pio_after_surgery <- data_glaucoma_copy %>%
+  filter(PIO_increase_1week_to_1month > 0 | PIO_increase_1month_to_3month > 0)
+
+# Number of patients with increased intraocular pressure
+num_patients_with_increase <- nrow(increased_pio_after_surgery)
+print(paste("Number of patients with increased intraocular pressure after laser surgery:", num_patients_with_increase))
+
+# Relationship between intraocular pressure and medication
+# Correlation between PIO at 1 month and medication use at 1 month
+cor_PIO1M_FARMACOS1M <- cor(data_glaucoma_copy$PIO_1_MES, data_glaucoma_copy$FARMACOS_1_MES, use = "complete.obs")
+
+# Correlation between medication use at different time points
+cor_FARMACOS1M_FARMACOS3M <- cor(data_glaucoma_copy$FARMACOS_1_MES, data_glaucoma_copy$FARMACOS_3_MES, use = "complete.obs")
+cor_FARMACOSPRE_FARMACOS1M <- cor(data_glaucoma_copy$FARMACOS_PRE, data_glaucoma_copy$FARMACOS_1_MES, use = "complete.obs")
+
+print(paste("Correlation between PIO at 1 month and medication use at 1 month:", cor_PIO1M_FARMACOS1M))
+print(paste("Correlation between medication use at 1 month and 3 months:", cor_FARMACOS1M_FARMACOS3M))
+print(paste("Correlation between pre-operative medication use and medication use at 1 month:", cor_FARMACOSPRE_FARMACOS1M))
+
+# Using boxplot to see distribution of PIO across age groups
+ggplot(data_glaucoma_copy, aes(x = AGE_GROUP, y = PIO_NORMAL)) +
+  geom_boxplot(fill = "lightblue") +
+  labs(title = "Intraocular Pressure by Age Group",
+       x = "Age Group",
+       y = "Intraocular Pressure (PIO)") +
+  theme_minimal()
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
