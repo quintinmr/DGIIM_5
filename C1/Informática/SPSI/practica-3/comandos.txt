@@ -1,0 +1,92 @@
+
+####################################################################################
+			
+					EMISOR 1
+
+####################################################################################
+
+openssl smime -sign -binary -nodetach -in ../message/gdh.pdf -out gdh.pdf.sgn -signer eve.cert.pem -inkey eve.key.pem
+
+
+openssl smime -encrypt -in gdh.pdf.sgn -out gdh.pdf.sgn.enc carol.cert.pem
+
+
+####################################################################################
+			
+					EMISOR 2
+
+####################################################################################
+
+openssl smime -decrypt -in gdh.pdf.sgn.enc -out gdh.pdf.sgn -recip carol.cert.pem -inkey carol.key.pem
+
+
+openssl smime -verify -binary -in gdh.pdf.sgn -noverify -out gdh.pdf
+
+
+openssl smime -resign -binary -nodetach -in gdh.pdf.sgn -out gdh.pdf.sgn2 -signer carol.cert.pem -inkey carol.key.pem
+
+
+openssl smime -encrypt -in gdh.pdf.sgn2 -out gdh.pdf.sgn2.enc bob.cert.pem
+
+
+####################################################################################
+			
+				        RECEPTOR
+
+####################################################################################
+
+openssl smime -decrypt -in gdh.pdf.sgn2.enc -out gdh.pdf.sgn2 -recip bob.cert.pem -inkey bob.key.pem
+
+
+openssl smime -pk7out -in gdh.pdf.sgn2 | openssl pkcs7 -print_certs -noout
+
+
+openssl smime -verify -binary -in gdh.pdf.sgn2 -noverify -out gdh.pdf
+
+openssl smime -verify -in gdh.pdf.sgn2 -noverify -out gdh.pdf
+
+#####################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+	emisor 1 firma --> (E_priv(sha(m)) + m)
+	emisor 1 cifra --> E_pub_e2((E_priv(sha(m)) + m))
+	
+	emisor 2 descifra --> D_priv_e2( E_pub_e2((E_priv(sha(m),k) + m))) = (E_priv(sha(m)) + m)
+	emisor 2 refirma  --> E_priv_e2(E_priv(sha(m)) + m) 
+	emisor 2 cifra    --> E_pub_r(E_priv_e2(E_priv(sha(m),k) + m))
+	
+	receptor descifra --> D_rec(E_pub_r(E_priv_e2(E_priv(sha(m),k) + m)) = E_priv_e2(E_priv(sha(m),k) + m)
+	
+	receptor verifica --> E_pub_e2(E_priv_e2(E_priv(sha(m),k) + m)) = E_priv(sha(m),k) + m
+			      E_pub_e1(E_priv(sha(m),k)) + m = sha(m) + m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

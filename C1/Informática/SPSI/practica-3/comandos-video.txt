@@ -1,0 +1,40 @@
+####################################################################################
+
+					EMISOR 1
+
+####################################################################################
+
+openssl smime -sign -binary -nodetach -in ../message/video.mp4 -out video.mp4.sgn -signer
+eve.cert.pem -inkey eve.key.pem
+
+openssl smime -encrypt -in video.mp4.sgn -out video.mp4.sgn.enc carol.cert.pem
+
+####################################################################################
+
+					EMISOR 2
+
+####################################################################################
+
+openssl smime -decrypt -in video.mp4.sgn.enc -out video.mp4.sgn -recip carol.cert.pem
+-inkey carol.key.pem
+
+openssl smime -resign -binary -nodetach -in video.mp4.sgn -out video.mp4.sgn2
+-signer carol.cert.pem -inkey carol.key.pem
+
+openssl smime -encrypt -in video.mp4.sgn2 -out video.mp4.sgn2.enc bob.cert.pem
+
+####################################################################################
+
+				        RECEPTOR
+
+####################################################################################
+
+openssl smime -decrypt -in video.mp4.sgn2.enc -out video.mp4.sgn2 -recip bob.cert.pem
+-inkey bob.key.pem
+
+openssl smime -pk7out -in video.mp4.sgn2 | openssl pkcs7 -print_certs -noout
+
+openssl smime -verify -binary -in video.mp4.sgn2 -noverify -out video.mp4
+
+#####################################################################################
+
