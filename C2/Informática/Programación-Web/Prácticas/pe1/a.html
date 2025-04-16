@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información Club Deportivo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+        h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .open {
+            background-color: #7FFF00; /* Verde para apertura completa */
+        }
+        .morning {
+            background-color: #FFD700; /* Amarillo para apertura de mañanas */
+        }
+        .closed {
+            background-color: #FF6347; /* Rojo para cierre */
+        }
+        .calendar {
+            border: 2px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .calendar h3 {
+            text-align: center;
+        }
+        .calendar table {
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+        .calendar th, .calendar td {
+            width: 14.28%;
+        }
+        .pricing-table {
+            margin-top: 30px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .pricing-table th, .pricing-table td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .pricing-table th {
+            background-color: #f2f2f2;
+        }
+        .dual-calendar {
+            display: flex;
+            justify-content: space-between;
+        }
+        .calendar-column {
+            width: 48%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Información Club Deportivo</h1>
+</header>
+
+<div class="container">
+    <!-- Calendarios de Marzo y Abril en una fila -->
+    <div class="dual-calendar">
+        <!-- Calendario de Marzo -->
+        <div class="calendar-column">
+            <div class="calendar">
+                <h3>Marzo 2025</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>L</th>
+                            <th>M</th>
+                            <th>X</th>
+                            <th>J</th>
+                            <th>V</th>
+                            <th>S</th>
+                            <th>D</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="open">1</td>
+                            <td class="morning">2</td>
+                            <td class="open">3</td>
+                            <td class="closed">4</td>
+                            <td class="open">5</td>
+                            <td class="morning">6</td>
+                            <td class="open">7</td>
+                        </tr>
+                        <tr>
+                            <td class="open">8</td>
+                            <td class="closed">9</td>
+                            <td class="morning">10</td>
+                            <td class="open">11</td>
+                            <td class="closed">12</td>
+                            <td class="open">13</td>
+                            <td class="closed">14</td>
+                        </tr>
+                        <tr>
+                            <td class="open">15</td>
+                            <td class="morning">16</td>
+                            <td class="closed">17</td>
+                            <td class="open">18</td>
+                            <td class="closed">19</td>
+                            <td class="open">20</td>
+                            <td class="closed">21</td>
+                        </tr>
+                        <tr>
+                            <td class="morning">22</td>
+                            <td class="open">23</td>
+                            <td class="closed">24</td>
+                            <td class="open">25</td>
+                            <td class="closed">26</td>
+                            <td class="open">27</td>
+                            <td class="closed">28</td>
+                        </tr>
+                        <tr>
+                            <td class="open">29</td>
+                            <td class="closed">30</td>
+                            <td class="closed">31</td>
+                            <td class="closed"></td>
+                            <td class="closed"></td>
+                            <td class="closed"></td>
+                            <td class="closed"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Calendario de Abril -->
+        <div class="calendar-column">
+            <div class="calendar">
+                <h3>Abril 2025</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>L</th>
+                            <th>M</th>
+                            <th>X</th>
+                            <th>J</th>
+                            <th>V</th>
+                            <th>S</th>
+                            <th>D</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="closed">1</td>
+                            <td class="open">2</td>
+                            <td class="morning">3</td>
+                            <td class="open">4</td>
+                            <td class="closed">5</td>
+                            <td class="open">6</td>
+                            <td class="closed">7</td>
+                        </tr>
+                        <tr>
+                            <td class="open">8</td>
+                            <td class="closed">9</td>
+                            <td class="morning">10</td>
+                            <td class="open">11</td>
+                            <td class="closed">12</td>
+                            <td class="open">13</td>
+                            <td class="closed">14</td>
+                        </tr>
+                        <tr>
+                            <td class="open">15</td>
+                            <td class="morning">16</td>
+                            <td class="closed">17</td>
+                            <td class="open">18</td>
+                            <td class="closed">19</td>
+                            <td class="open">20</td>
+                            <td class="closed">21</td>
+                        </tr>
+                        <tr>
+                            <td class="open">22</td>
+                            <td class="closed">23</td>
+                            <td class="open">24</td>
+                            <td class="open">25</td>
+                            <td class="closed">26</td>
+                            <td class="open">27</td>
+                            <td class="closed">28</td>
+                        </tr>
+                        <tr>
+                            <td class="open">29</td>
+                            <td class="closed">30</td>
+                            <td class="closed"></td>
+                            <td class="closed"></td>
+                            <td class="closed"></td>
+                            <td class="closed"></td>
+                            <td class="closed"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendarios de Mayo y Junio en una fila -->
+    <div class="dual-calendar">
+        <!-- Calendario de Mayo -->
+        <div class="calendar-column">
+            <div class="calendar">
+                <h3>Mayo 2025</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>L</th>
+                            <th>M</th>
+                            <th>X</th>
+                            <th>J</th>
+                            <th>V</th>
+                            <th>S</th>
+                            <th>D</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rellenar con los días y estado de apertura -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Calendario de Junio -->
+        <div class="calendar-column">
+            <div class="calendar">
+                <h3>Junio 2025</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>L</th>
+                            <th>M</th>
+                            <th>X</th>
+                            <th>J</th>
+                            <th>V</th>
+                            <th>S</th>
+                            <th>D</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rellenar con los días y estado de apertura -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Precios de Inscripción -->
+    <h2>Precios de Inscripción</h2>
+    <table class="pricing-table">
+        <thead>
+            <tr>
+                <th>Opción</th>
+                <th>Precio por mes</th>
+                <th>Total (en caso de más meses)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1 mes</td>
+                <td>50€</td>
+                <td>50€</td>
+            </tr>
+            <tr>
+                <td>3 meses</td>
+                <td>45€</td>
+                <td>135€</td>
+            </tr>
+            <tr>
+                <td>6 meses</td>
+                <td>40€</td>
+                <td>240€</td>
+            </tr>
+            <tr>
+                <td>12 meses</td>
+                <td>35€</td>
+                <td>420€</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Información General</h2>
+    <p>El club deportivo cuenta con instalaciones de alta calidad para la práctica de diversos deportes, incluyendo fútbol, tenis, pádel, baloncesto, boxeo, karate, judo y natación. Ofrecemos precios competitivos y acceso a nuestras instalaciones según el tipo de membresía seleccionada. Para más información, por favor contacta con nuestro personal.</p>
+
+</div>
+
+</body>
+</html>
+

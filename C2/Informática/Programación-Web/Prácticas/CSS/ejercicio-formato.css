@@ -1,0 +1,59 @@
+h2{
+
+    color:aqua;
+    font-style:calc();
+    
+    text-align: center;
+    font-size: 100%;
+    text-decoration: underline;
+}
+p {
+
+    color:blueviolet;
+    font-style: inherit;
+    font-weight: normal;
+    background-color: bisque;
+    background-image: url('fractal.png');
+
+}
+#Párrafo1{
+
+    color:deeppink;
+    font-style: italic;
+    font-weight: normal;
+    background-color:cornflowerblue;
+    background-image: url('fractal.png');
+
+}
+#Párrafo2{
+
+    color:fuchsia;
+    font-style:oblique;
+    font-weight: normal;
+    background-color:tomato;
+    background-image: url('fractal.png');
+
+}
+section{
+
+    color:beige;
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 100%;
+    background-color: blue;
+    background-attachment: fixed;
+    background-position: center;
+}
+section p{
+
+    color:chocolate;
+    font-style: initial;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    text-decoration: solid;
+    text-align: center;
+    text-indent: 50px;
+    background-color: darkseagreen;
+    background-image: -webkit-gradient(url('fractal-2.png'));
+}
+

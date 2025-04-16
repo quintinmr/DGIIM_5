@@ -1,0 +1,24 @@
+<html">
+    <head>
+        <title>Ejercicio Vectores en PHP</title>
+    </head>
+<body>
+    <h1>Ejercicio con Vectores en PHP</h1>
+    <?php
+        // Definir un vector (array) indexado
+        $numeros = array(10, 20, 30, 40, 50);
+
+        // Mostrar el vector con print_r
+        echo "<h2>Vector original:</h2>";
+        echo "<pre>";
+        print_r($numeros);
+        echo "</pre>";
+        
+        foreach($numeros as $n => $num)
+            {
+                echo "$n:$num <br/>";
+            }
+        
+    ?>
+</body>
+</html>

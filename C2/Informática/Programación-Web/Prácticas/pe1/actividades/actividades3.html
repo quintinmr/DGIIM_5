@@ -1,0 +1,251 @@
+<!--Página de actividades del club deportivo-->
+
+<!DOCTYPE html>
+
+
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+        
+        <title>Club Deportivo FractalGym</title>
+        <link rel="stylesheet" type="text/css" href="../index.css">
+
+    </head>
+
+    <body>
+
+        <!--Cabecera de la página principal--> 
+        <header>
+
+            
+            <img src="../img/logo.jpg" alt="FractalGym Logo" class="logo-img">
+            <h1>FractalGym</h1>
+
+            <section class="login">
+                <form action="login.php" method="post">
+                    <h5>Login</h5>
+                    <input type="text" name="usuario" placeholder="Usuario" required>
+                    <br/>
+                    <input type="password" name="contraseña" placeholder="Contraseña"  required>
+                    <button type="submit">Entrar</button>
+                </form>
+                
+                <nav>
+                    <a href="altausuarios.html">Registrarse</a>
+                </nav>
+        
+            </section>
+
+            <section class="menu">
+
+                <!--Menú de navegación prinicpal-->
+                <nav class="main-menu">
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="actividades.html">Actividades</a></li>
+                        <li><a href="../conoce_club.html">Conoce Nuestro Club</a></li>
+                        <li><a href="../eventos.html">Eventos Deportivos</a></li>
+                        <li><a href="../informacion.html">Información</a></li>
+                        <li><a href="../sugerencias.html">Sugerencias</a></li>
+                    </ul>
+                </nav>
+
+            </section>
+
+            
+
+
+        </header>
+
+        <!--Parte principal del activdades.html-->
+        <main class="actividades">
+
+          <aside>
+            <nav class="Actividades">
+              <h2>Actividades</h2>
+              <ul>
+                <li>
+                  <details>
+                    <summary><a href="actividades_futbol.html">Fútbol</a></summary>
+                    <ul>
+                      <li><a href="actividades_futbol7.html">Fútbol 7</a></li>
+                      <li><a href="actividades_futbol11.html">Fútbol 11</a></li>
+                      <li><a href="actividades_futbolsala.html">Fútbol sala</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li><a href="actividades_baloncesto.html">Baloncesto</a></li>
+                <li><a href="actividades_tenis.html">Tenis</a></li>
+                <li><a href="actividades_padel.html">Pádel</a></li>
+                <li><a href="actividades_natacion.html">Natación</a></li>
+                <li><a href="actividades_waterpolo.html">Waterpolo</a></li>
+                <li>
+                  <details>
+                    <summary><a href="actividades_deportes_de_contacto.html">Deportes de contacto</a></summary>
+                    <ul>
+                      <li><a href="actividades_boxeo.html">Boxeo</a></li>
+                      <li><a href="actividades_karate.html">Karate</a></li>
+                      <li><a href="actividades_judo.html">Judo</a></li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </nav>
+          
+            <nav class="Modalidad">
+              <h2>Modalidad</h2>
+              <ul>
+                <li><a href="actividades_individual.html">Individual</a></li>
+                <li><a href="actividades_grupo.html">En grupo</a></li>
+              </ul>
+            </nav>
+          </aside>
+          
+
+          <section class="Listado_de_actividades">
+            <article>
+                <figure>
+                  <a href="actividades_waterpolo.html">
+                    <img src="../img/actividades/waterpolo.jpg" alt="Waterpolo">
+                  </a>
+                  <figcaption>
+                    <h3>Waterpolo</h3>
+                    <p>Modalidad: en grupo</p>
+                    <p>Pabellón de natación (1)</p>
+                  </figcaption>
+                </figure>
+            </article>
+
+            <article>
+                <figure>
+                  <img src="../img/actividades/judo.jpeg" alt="Judo">
+                  <figcaption>
+                    <h3>Judo</h3>
+                    <p>Modalidad: en grupo</p>
+                    <p>Pabellón de artes marciales (3)</p>
+                  </figcaption>
+                </figure>
+              </article>
+            <article>
+              <figure>
+                <a href="actividades_futbol.html">
+                  <img src="../img/actividades/futbol.jpg" alt="Fútbol">
+                </a>
+                <figcaption>
+                  <h3>Fútbol</h3>
+                  <p>Modalidad: Equipo</p>
+                  <p>Variedades: Fútbol 7, Fútbol 11, Fútbol Sala</p>
+                  <p>Pistas: 1, 2, 3</p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article>
+                <figure>
+                  <a href="actividades_baloncesto.html">
+                    <img src="../img/actividades/baloncesto.jpg" alt="Baloncesto">
+                  </a>
+                  <figcaption>
+                    <h3>Baloncesto</h3>
+                    <p>Modalidad: Equipo</p>
+                    <p>Pistas: 4 y 5</p>
+                  </figcaption>
+                </figure>
+              </article>
+        
+              <article>
+                <figure>
+                  <a href="actividades_tenis.html">
+                    <img src="../img/actividades/tenis.jpg" alt="Tenis">
+                  </a>
+                  <figcaption>
+                    <h3>Tenis</h3>
+                    <p>Modalidad: Individual</p>
+                    <p>Pistas: 6</p>
+                  </figcaption>
+                </figure>
+              </article>
+        
+              <article>
+                <figure>
+                  <a href="actividades_padel.html">
+                    <img src="../img/actividades/padel.jpg" alt="Pádel">
+                  </a>
+                  <figcaption>
+                    <h3>Pádel</h3>
+                    <p>Modalidad: Pareja</p>
+                    <p>Pistas: 7 y 8</p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <a href="actividades_natacion.html">
+                    <img src="../img/actividades/natacion.jpg" alt="Natación">
+                  </a>
+                  <figcaption>
+                    <h3>Natación</h3>
+                    <p>Modalidad: Individual</p>
+                    <p>Pabellón de natación (1)</p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <a href="actividades_balonmano.html">
+                    <img src="../img/actividades/balonmano.jpg" alt="Balonmano">
+                  </a>
+                  <figcaption>
+                    <h3>Balonmano</h3>
+                    <p>Modalidad: en grupo</p>
+                    <p>Pabellón de balonmano (2)</p>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <article>
+                <figure>
+                  <a href="actividades_deportes_de_contacto.html">
+                    <img src="../img/actividades/boxeo.jpeg" alt="Boxeo">
+                  </a>
+                  <figcaption>
+                    <h3>Boxeo</h3>
+                    <p>Modalidad: en grupo</p>
+                    <p>Pabellón de artes marciales (1)</p>
+                  </figcaption>
+                </figure>
+              </article>
+            
+
+        </main>
+
+
+        <a id="left" href="actividades2.html">
+            <img src = "../img/left.png" alt = "Flecha anterior" />
+        </a>
+
+        <!--Pie de página-->
+        <footer>
+
+            <p>
+                &copy; 2025 Club deportivo 
+                <h4>FractalGym</h4>
+            </p>
+            <nav>
+                <a href="contacto.html">Contacto</a>
+                <a href="como_se_hizo.pdf">Cómo se hizo</a>
+            </nav>
+
+        </footer>
+
+
+    </body>
+
+
+
+
+</html>

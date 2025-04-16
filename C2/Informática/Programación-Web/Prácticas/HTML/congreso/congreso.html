@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>
+            Formulario de Inscripción congreso
+        </title>
+    </head>
+
+    <body>
+
+        <!--1-->
+        <header>
+            <h1>XVIII Congreso nacional de Bioinformática</h1>
+            <h3>05-julio-2025</h3>
+        </header>
+
+        <br>
+
+        <!--4-->
+        <section>
+
+            <p>
+                <table border="1">
+
+                    <caption>Precios públicos</caption>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Registro Temprano</th>
+                            <th>Registro Tardío</th>
+                            <th>Registro durante el congreso</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+    
+                        <tr>
+                            <th colspan="1">Estudiante</th>
+                            <td>100€</td>
+                            <td>150€</td>
+                            <td>300€</td>
+                        </tr>
+    
+                        <tr>
+                            <th colspan="1">Profesionales</th>
+                            <td>1800€</td>
+                            <td>230€</td>
+                            <td>300€</td>
+                        </tr>
+                        
+    
+                    </tbody>
+    
+                </table>
+            </p>
+
+        </section>
+
+        <br>
+
+        <!--5-->
+        <section>
+
+            <h3>Registro del participante</h3>
+            
+            <p>
+
+                <form action="procesar.php" method="post">
+
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" value="" />
+                
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" value="" />
+                    
+                    <label for="teléfono">Teléfono:</label>
+                    <input type="text" id="teléfono" name="teléfono" value="" />
+    
+                    <br>
+                    <br>
+                    <label for="acompañantes">Número de acompañantes:</label>
+                    <select id="acompañantes"> 
+                        <option value = "1">Uno</option>
+                        <option value = "2">Dos</option>
+                        <option value = "3">Tres</option>
+                        <option value = "4">Cuatro</option>
+                    </select>
+                    <br>
+                    <br>
+                    <label for="nuevo">¿Has asistido anteriormente al congreso? </label> Sí
+                    <input type="radio" id="respuesta_nuevo" name="nuevo" value="Sí" checked /> No
+                    <input type="radio" id="respuesta_nuevo" name="nuevo" value="No" checked />
+    
+                    <br>
+                    <br>
+                    <datalist id="conocerEvento">
+                        <option value="Redes Sociales">
+                        <option value="Universidad">
+                        <option value="Página web del congreso">
+                    </datalist>
+    
+                    <label for="conocerEvento">¿Cómo conociste el evento? </label>
+                    <input type="text" id="conocerEvento" list="conocerEvento">
+                
+                <br>
+                <br>
+    
+                <input type = "submit" id = "registrarse" value = "Registrarse"/>
+                <input type = "reset" id = "reiniciar" value = "Reiniciar formulario" />
+    
+                </form>
+    
+
+            </p>
+            
+
+        </section>
+
+         <!--2-->
+         <aside>
+            <h3><u>Contacto</u></h3>
+            <p>bioinformaticsCongress@gmail.com</p>
+        </aside>
+
+        <br>
+         <!--3-->
+         <footer>
+
+            <h4>Oranizado por: </h4>
+            <p>
+                <nav>
+                    <a href="https://sebibc.es/"><img src="org-3.png" title="Sociedad Española de Bioinformática y Biología Computacional" alt="Sociedad Española de Bioinformática y Biología Computacional" width="100" height="100"></a>
+                    <a href="https://wfmc.org/"><img src="org-2.png" title="Workflow Management Coallition" alt="Workflow Management Coallition" width="100" height="100"></a>
+                    <a href="https://ugr.es/"><img src="ugr.png"  title="Universidad de Granada" alt="Universidad de Granada" width="100" height="100"></a>
+                </nav>
+            </p>
+            
+
+
+
+        </footer>
+
+
+    </body>
+
+
+
+
+</html>

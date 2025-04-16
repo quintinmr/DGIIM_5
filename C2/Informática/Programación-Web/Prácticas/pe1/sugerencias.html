@@ -1,0 +1,142 @@
+<!--Documento sugerencias-->
+
+<!DOCTYPE html>
+
+
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+        
+        <title>Club Deportivo FractalGym</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+
+    </head>
+
+    <body>
+
+        <!--Cabecera de la página principal--> 
+        <header>
+
+            
+            <img src="img/logo.jpg" alt="FractalGym Logo" class="logo-img">
+            <h1>FractalGym</h1>
+
+            <section class="login">
+                <form action="login.php" method="post">
+                    <h5>Login</h5>
+                    <input type="text" name="usuario" placeholder="Usuario" required>
+                    <br/>
+                    <input type="password" name="contraseña" placeholder="Contraseña"  required>
+                    <button type="submit">Entrar</button>
+                </form>
+                
+                <nav>
+                    <a href="altausuarios.html">Registrarse</a>
+                </nav>
+        
+            </section>
+
+            <section class="menu">
+
+                <!--Menú de navegación prinicpal-->
+                <nav class="main-menu">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="actividades/actividades.html">Actividades</a></li>
+                        <li><a href="conoce_club.html">Conoce Nuestro Club</a></li>
+                        <li><a href="eventos.html">Eventos Deportivos</a></li>
+                        <li><a href="informacion.html">Información</a></li>
+                        <li><a href="sugerencias.html">Sugerencias</a></li>
+                    </ul>
+                </nav>
+
+            </section>
+
+        </header>
+
+        <!--Parte principal del sugerencias.html-->
+        <main class="sugerencias">
+
+            <h1>Sugerencias y Opiniones</h1>
+            <p>En esta sección recopilamos todas las opiniones, sugerencias y experiencias de quienes
+                forman o han formado parte de nuestro club. ¡Tu opinión nos importa!
+            </p>
+
+            <section class="comentarios">
+
+                <article class="comentario">
+                    <h3>María López</h3>
+                    <p>
+                        <strong>Sobre las instalaciones:</strong> “Las pistas de tenis están en muy buen 
+                        estado. Me encanta entrenar aquí cada semana.”
+                    </p>
+                </article>
+
+                <article class="comentario">
+                    <h3>David Fernández</h3>
+                    <p>
+                        <strong>Sobre los eventos:</strong> “El torneo de pádel estuvo súper bien organizado. 
+                        Buen ambiente y puntualidad.”
+                    </p>
+                </article>
+            
+                <article class="comentario">
+                    <h3>Lucía Martínez</h3>
+                    <p>
+                        <strong>Sobre la limpieza:</strong> “Los vestuarios siempre están limpios, se nota el 
+                        cuidado del personal. ¡Gracias!”
+                    </p>
+                </article>
+            
+                <article class="comentario">
+                    <h3>Pedro García</h3>
+                    <p>
+                        <strong>Organización general:</strong> “Todo muy bien coordinado, aunque a veces 
+                        faltan taquillas libres en horas punta.”
+                    </p>
+                  </article>
+
+            </section>
+
+            <!-- Formulario de sugerencias -->
+            <section class="formulario-sugerencia">
+
+                <h2>Deja tu comentario</h2>
+                <form action="#" method="post">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required />
+            
+                    <label for="comentario">Tu sugerencia o experiencia:</label>
+                    <textarea id="comentario" name="comentario" rows="6" placeholder="Escribe aquí tu comentario..." required></textarea>
+            
+                    <button type="submit">Enviar</button>
+                </form>
+
+            </section>
+
+        </main>
+
+        <!--Pie de página-->
+        <footer>
+
+            <p>
+                &copy; 2025 Club deportivo 
+                <h4>FractalGym</h4>
+            </p>
+            <nav>
+                <a href="contacto.html">Contacto</a>
+                <a href="como_se_hizo.pdf">Cómo se hizo</a>
+            </nav>
+
+        </footer>
+
+
+
+    </body>
+
+
+
+
+</html>

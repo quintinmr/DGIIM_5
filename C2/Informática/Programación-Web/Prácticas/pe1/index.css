@@ -1,0 +1,780 @@
+/*-------------------------------------------------------------------------*/
+/*                          DOCUMENTO PRINCIPAL*/
+/*-------------------------------------------------------------------------*/
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main {
+    flex: 1;
+  }
+body {
+    position: relative;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e6f1fa; /* Fondo general claro */
+    height: 100%;
+}
+
+header {
+    background: linear-gradient(to left, #FF8C00, #FF6347); /* DarkOrange */
+    height: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo-img {
+    height: 180px;
+    width: auto;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 4em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white; /* Contraste perfecto con el naranja */
+    margin: 0;
+    font-weight: bold;
+}
+
+
+/* Login form */
+
+.login form {
+    margin-bottom: 10px;
+}
+
+.login input {
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login button {
+    background-color: #274472;
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login nav a:hover {
+    color: #8fd3ff;
+}
+
+.login form h5 {
+    font-size: 1em;
+    color: #ffffff;
+    transform: translateX(25%); /* Ajusta el centro exacto */    
+    margin: 0;
+    
+}
+
+/* Menú dentro del header y centrado */
+.menu {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: white;
+    color: #FF8C00;
+    border-radius: 4px;
+}
+
+.imagen-club img {
+    width: 100%;
+    height: 100vh; /* Altura del 90% de la pantalla */
+    object-fit:fill;
+    display: block;
+}
+.imagen-club {
+    width: 100%;
+    height: 100vh; /* Altura del 90% de la pantalla */
+    overflow: hidden;
+}
+
+/* Sección de bienvenida */
+.informacion-club {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+}
+
+.informacion-club h2 {
+    font-size: 2em;
+    color: #FF8C00; /* Naranja a juego con la cabecera */
+    margin-bottom: 10px;
+}
+
+.informacion-club p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+}
+
+footer{
+
+    background: linear-gradient(to right, #FF8C00, #FF6347); /* DarkOrange */
+    height: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/*-------------------------------------------------------------------------*/
+/*                          DOCUMENTO ACTIVIDADES                          */
+/*-------------------------------------------------------------------------*/
+
+.actividades, .actividades-futbol, .actividades-contacto, .actividades-futbol7, .actividades-futbol11, .actividades-futbolsala,
+.actividades-tenis, .actividades-padel, .actividades-natacion, .actividades-waterpolo, .actividades-baloncesto {
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+
+/* Menú lateral */
+aside {
+    width: 250px;
+    background-color:#ffffff;
+    padding: 10px;
+}
+  
+aside nav {
+    margin-bottom: 2rem;
+}
+  
+aside h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #474B4E;
+}
+  
+aside ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+  
+aside ul li {
+    margin: 0.5rem 0;
+}
+  
+aside ul li a {
+    text-decoration: none;
+    color:chocolate;
+    font-weight: bold;
+}
+  
+aside ul li a:hover {
+    text-decoration: underline;
+}
+
+ /* Zona de actividades */
+.Listado_de_actividades, .modalidades-futbol, .modalidades-contacto, .modalidades-tenis, .modalidades-padel, .modalidades-natacion, .modalidades-waterpolo, .modalidades-baloncesto {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    gap: 2rem;
+    flex: 1;
+    background-color:#ffffff;
+    
+}
+
+  
+.Listado_de_actividades article, .modalidades-futbol article, .modalidades-contacto article, .modalidades-tenis article, .modalidades-padel article, .modalidades-natacion article, 
+.modalidades-waterpolo article, .modalidades-baloncesto article{
+
+    box-shadow: 0 4px 8px rgba(255, 102, 0, 0.973); /* sombra naranja */
+    border-radius: 10px;
+    padding: 1rem;
+    transition: transform 0.2s ease;
+    overflow: hidden;
+}
+
+.Listado_de_actividades article:hover, .modalidades-futbol article:hover,  .modalidades-contacto article:hover, .second-column:hover, 
+.modalidades-tenis article:hover, .modalidades-padel article:hover, .modalidades-natacion article:hover, .modalidades-waterpolo article:hover, .modalidades-baloncesto article:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(232, 220, 0, 0.973);
+
+}
+  
+  
+figure {
+    margin: 0;
+}
+
+figure img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+figcaption {
+    padding: 1rem;
+}
+
+figcaption h3 {
+    font-size: 1.2rem;
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+
+figcaption p {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/*flecha siguiente y anterior*/
+.actividades {
+
+    position: relative;
+    padding-bottom: 100px;
+}
+#left, #right {
+    position:absolute;
+    top: 146%;
+   
+}
+
+#left {
+    left: 300px;
+}
+
+#right {
+    right: 30px;
+}
+
+#left img, #right img {
+    width: 80px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#left img:hover, #right img:hover {
+    box-shadow: 0 4px 12px #f97101;
+    transform: scale(1.05);
+}
+
+
+
+
+/*-------------------------------------------------------------------------*/
+/*                      DOCUMENTO MODALIDADES (EN GENERAL)                      */
+/*-------------------------------------------------------------------------*/
+
+@media (min-width: 481px) {
+    
+    /* Contenedor general de section + aside derecho */
+    .modalidades-general {
+      width: 100%;
+      display: flex;
+      box-sizing: border-box;
+ 
+    }
+  
+    .first-column {
+      width: 67%;
+      background-color: #ffffff;
+
+    }
+
+    .first-column figure figcaption h3{
+
+        font-weight: bolder;
+        font-size: 200%;
+    }
+  
+    /* Aside derecho con actividades relacionadas */
+    .second-column {
+      width: 33%;
+      background-color: #ffffff;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .second-column figcaption h3 {
+        background-color: #FF8C00; /* Naranja fuerte */
+        color: white;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        margin: 0; /* Elimina márgenes si no lo necesitas */
+    }
+    
+  }
+
+
+/*-------------------------------------------------------------------------*/
+/*                          DOCUMENTO INFORMACION                         */
+/*-------------------------------------------------------------------------*/
+  
+.horarios-pistas table {
+    width: 100%;
+    border: 1px medium black;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: #ffff;
+    box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.horarios-pistas thead th {
+    background-color: #00b7ff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.calendarios-apertura table {
+    width: 100%;
+    border: 1px thick double black;
+    margin: 25px 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: #ffff;
+    box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.calendarios-apertura thead th {
+    background-color: #0015ff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+
+td, th {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+
+td.open {
+    background-color: #d4edda; 
+    color: #155724;
+    font-weight: bold;
+}
+
+td.closed {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-weight: bold;
+}
+
+td.morning {
+    background-color: #fff3cd;
+    color: #856404;
+    font-weight: bold;
+}
+
+h2 {
+    margin-top: 30px;
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+}
+
+.tarifas {
+    text-align: center;
+}
+
+.tarifas h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tarifas h3 {
+    text-align: left;
+    margin-left: 5%;
+}
+
+#cuotas-socios, #anticipada {
+    display: inline-block;
+    vertical-align:middle;
+    width: auto;
+    box-sizing: border-box;
+}
+
+.tarifas table {
+    border: 1px medium black;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: #ffff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+#cuotas-socios thead th,
+#anticipada thead th {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border: 2px solid #000000;
+    font-size: 150%;
+}
+
+#basica {
+    border-radius: 20px;
+    border-color: #856404;
+    background-color: #b3a579;
+    font-weight: bold;
+}
+
+#FractalGym {
+    border: 2px solid #850404;
+    background-color: #fe6100;
+    font-weight: bold;
+}
+
+#FractalGym:hover {
+    scale: 1.02;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.973);
+}
+
+#FractalGymPlus {
+    border-radius: 20px;
+    border-color: #85045c;
+    background-color: #f889d5;
+    font-weight: bold;
+    box-shadow: 2px 2px 8px rgba(166, 42, 42, 0.1);
+}
+
+#alquiler {
+    width: 90%;
+    margin: 40px auto;
+}
+
+#alquiler thead th {
+    background-color: #00ffc8;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border: 2px solid #000;
+    font-size: 150%;
+    text-align: center;
+}
+
+
+/*-------------------------------------------------------------------------*/
+/*                        DOCUMENTO CONOCE CLUB                            */
+/*-------------------------------------------------------------------------*/
+
+.conoce_club h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.conoce_club p {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.conoce_club > img {
+    display: block;           
+    margin: 2rem auto;        
+    max-width: 100%;        
+    height: auto;             
+    border-radius: 10px;     
+    box-shadow: 0 4px 12px rgba(249, 113, 1, 0.935);
+}
+
+
+/* Tabla general */
+.instalaciones table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* celdas iguales */
+    margin-bottom: 2rem;
+}
+
+/* Celdas */
+.instalaciones td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: 33.33%; /* 3 celdas por fila */
+}
+
+/* Título */
+.instalaciones h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+/* Imágenes del mismo tamaño */
+.instalaciones img {
+    max-width: 350px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Descripción */
+.instalaciones p {
+    margin: 0.5rem 0 0;
+    font-size: 1.5rem;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .instalaciones table,
+    .instalaciones tbody,
+    .instalaciones tr,
+    .instalaciones td {
+        display: block;
+        width: 100%;
+    }
+
+    .instalaciones td {
+        padding: 1rem 0;
+    }
+
+    .instalaciones img {
+        max-width: 90%;
+        height: auto;
+    }
+}
+
+
+/*-------------------------------------------------------------------------*/
+/*                          DOCUMENTO EVENTOS                              */
+/*-------------------------------------------------------------------------*/
+.eventos h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #222;
+    text-align: center;
+}
+
+.eventos table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.eventos thead {
+    background-color: #f97101;
+    color: white;
+}
+
+.eventos th, .eventos td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.eventos img {
+    max-width: 180px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .eventos table,
+    .eventos thead,
+    .eventos tbody,
+    .eventos th,
+    .eventos td,
+    .eventos tr {
+        display: block;
+        width: 100%;
+    }
+
+    .eventos thead {
+        display: none;
+    }
+
+    .eventos tr {
+        margin-bottom: 2rem;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        padding: 1rem;
+    }
+
+    .eventos td {
+        text-align: left;
+        padding: 0.5rem 0;
+        border: none;
+    }
+
+    .eventos td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        margin-bottom: 0.3rem;
+        color: #444;
+    }
+
+    .eventos img {
+        margin: 0 auto 1rem;
+        display: block;
+        width: 90%;
+    }
+}
+
+
+/*-------------------------------------------------------------------------*/
+/*                         DOCUMENTO SUGERENCIAS                           */
+/*-------------------------------------------------------------------------*/
+
+.sugerencias {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+  
+/* Título */
+.sugerencias h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+  
+.sugerencias p{
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+  
+  /* Comentarios */
+.comentarios {
+    margin-bottom: 3rem;
+}
+  
+.comentario {
+    background-color: #fff;
+    border-left: 5px solid #f97316; /* Naranja */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+}
+  
+.comentario h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    color: #f97316;
+}
+  
+.comentario p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+  
+  /* Formulario */
+.formulario-sugerencia h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #333;
+}
+  
+.formulario-sugerencia  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+  
+.formulario-sugerencia  form label {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+.formulario-sugerencia form input[type="text"], .formulario-sugerencia form textarea {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+  
+.formulario-sugerencia form button {
+    background-color: #f97316;
+    color: white;
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    align-self: flex-start;
+}
+  
+.formulario-sugerencia form button:hover {
+    background-color: #e55f05;
+}
+  
+  /* Responsive */
+@media (max-width: 600px) {
+    main.sugerencias {
+      padding: 1rem 0.5rem;
+    }
+  
+    .sugerencias h1 {
+      font-size: 1.6rem;
+    }
+  
+    .formulario-sugerencia h2 {
+      font-size: 1.4rem;
+    }
+  
+    .formulario-sugerencia form button {
+      width: 100%;
+      text-align: center;
+    }
+}
+  

@@ -1,0 +1,703 @@
+<!--Documento informacion-->
+
+<!DOCTYPE html>
+
+
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+        
+        <title>Club Deportivo FractalGym</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+
+    </head>
+
+    <body>
+
+        <!--Cabecera de la página principal--> 
+        <header>
+
+            
+            <img src="img/logo.jpg" alt="FractalGym Logo" class="logo-img">
+            <h1>FractalGym</h1>
+
+            <section class="login">
+                <form action="login.php" method="post">
+                    <h5>Login</h5>
+                    <input type="text" name="usuario" placeholder="Usuario" required>
+                    <br/>
+                    <input type="password" name="contraseña" placeholder="Contraseña"  required>
+                    <button type="submit">Entrar</button>
+                </form>
+                
+                <nav>
+                    <a href="altausuarios.html">Registrarse</a>
+                </nav>
+        
+            </section>
+
+            <section class="menu">
+
+                <!--Menú de navegación prinicpal-->
+                <nav class="main-menu">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="actividades/actividades.html">Actividades</a></li>
+                        <li><a href="conoce_club.html">Conoce Nuestro Club</a></li>
+                        <li><a href="eventos.html">Eventos Deportivos</a></li>
+                        <li><a href="informacion.html">Información</a></li>
+                        <li><a href="sugerencias.html">Sugerencias</a></li>
+                    </ul>
+                </nav>
+
+            </section>
+
+            
+
+
+        </header>
+
+        <!--Parte principal del actividades_futbol.html-->
+        <main class="informacion">
+
+            <section class="horarios-pistas">
+                <h2>Horario de las pistas</h2>
+        
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Pista 1 (Fútbol 7)</th>
+                            <th>Pista 2 (Fútbol 11)</th>
+                            <th>Pista 3 (Fútbol Sala)</th>
+                            <th>Pista 4,5,6 (Tenis)</th>
+                            <th>Pista 7,8,9 (Pádel)</th>
+                            <th>Pista 10,11,12 (Baloncesto)</th>
+                            <th>Sala 1 (Boxeo)</th>
+                            <th>Sala 2 (Karate)</th>
+                            <th>Sala 3 (Judo)</th>
+                            <th>Pabellón Natación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>08:00 - 09:00</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">abierto</td>
+                        
+                        </tr>
+                        <tr>
+                            <td>09:00 - 10:00</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">abierto</td>
+                        
+                        </tr>
+                        <tr>
+                            <td>10:00 - 11:00</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>11:00 - 12:00</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>12:00 - 13:00</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>13:00 - 14:00</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>14:00 - 15:00</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>15:00 - 16:00</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>16:00 - 17:00</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>17:00 - 18:00</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>18:00 - 19:00</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>19:00 - 20:00</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>20:00 - 21:00</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            <td class="closed">cerrado</td>
+                            <td class="open">abierto</td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="calendarios-apertura">
+
+                <h2>
+                    Calendario de apertura del Club
+                </h2>
+
+                <table>
+                    <tr>
+                        <th>
+
+                            <!--CALENDARIO DE MARZO-->
+                        <h3>Marzo 2025</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>L</th>
+                                    <th>M</th>
+                                    <th>X</th>
+                                    <th>J</th>
+                                    <th>V</th>
+                                    <th>S</th>
+                                    <th>D</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="open">24</td>
+                                    <td class="morning">25</td>
+                                    <td class="open">26</td>
+                                    <td class="closed">27</td>
+                                    <td class="open">28</td>
+                                    <td class="morning">1</td>
+                                    <td class="open">2</td>
+                                </tr>
+                                <tr>
+                                    <td class="open">3</td>
+                                    <td class="closed">4</td>
+                                    <td class="morning">5</td>
+                                    <td class="open">6</td>
+                                    <td class="closed">7</td>
+                                    <td class="open">8</td>
+                                    <td class="closed">9</td>
+                                </tr>
+                                <tr>
+                                    <td class="open">10</td>
+                                    <td class="morning">11</td>
+                                    <td class="closed">12</td>
+                                    <td class="open">13</td>
+                                    <td class="closed">14</td>
+                                    <td class="open">15</td>
+                                    <td class="closed">16</td>
+                                </tr>
+                                <tr>
+                                    <td class="morning">17</td>
+                                    <td class="open">18</td>
+                                    <td class="closed">19</td>
+                                    <td class="open">20</td>
+                                    <td class="closed">21</td>
+                                    <td class="open">22</td>
+                                    <td class="closed">23</td>
+                                </tr>
+                                <tr>
+                                    <td class="open">24</td>
+                                    <td class="closed">25</td>
+                                    <td class="closed">26</td>
+                                    <td class="closed">27</td>
+                                    <td class="closed">28</td>
+                                    <td class="closed">29</td>
+                                    <td class="closed">30</td>
+                                </tr>
+                                <tr>
+                                    <td class="open">31</td>
+                                    <td class="open">1</td>
+                                    <td class="open">2</td>
+                                    <td class="open">3</td>
+                                    <td class="open">4</td>
+                                    <td class="morning">5</td>
+                                    <td class="closed">6</td>
+                                </tr>
+
+                                
+                            </tbody>
+                        </table>
+
+                        </th>
+
+                        <th>
+
+                            <!--CALENDARIO DE ABRIL-->
+                        <h3>Abril 2025</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>L</th>
+                                    <th>M</th>
+                                    <th>X</th>
+                                    <th>J</th>
+                                    <th>V</th>
+                                    <th>S</th>
+                                    <th>D</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="open">31</td>
+                                    <td class="open">1</td>
+                                    <td class="open">2</td>
+                                    <td class="open">3</td>
+                                    <td class="open">4</td>
+                                    <td class="morning">5</td>
+                                    <td class="closed">6</td>
+                                </tr>
+                                <tr>
+                                    <td class="closed">7</td>
+                                    <td class="closed">8</td>
+                                    <td class="morning">9</td>
+                                    <td class="morning">10</td>
+                                    <td class="closed">11</td>
+                                    <td class="open">12</td>
+                                    <td class="open">13</td>
+                                </tr>
+                                <tr>
+                                    <td class="open">14</td>
+                                    <td class="morning">15</td>
+                                    <td class="open">16</td>
+                                    <td class="open">17</td>
+                                    <td class="open">18</td>
+                                    <td class="morning">19</td>
+                                    <td class="closed">20</td>
+                                </tr>
+                                <tr>
+                                    <td class="morning">21</td>
+                                    <td class="open">22</td>
+                                    <td class="open">23</td>
+                                    <td class="open">24</td>
+                                    <td class="closed">25</td>
+                                    <td class="morning">26</td>
+                                    <td class="closed">27</td>
+                                </tr>
+                                <tr>
+                                    <td class="open">28</td>
+                                    <td class="open">29</td>
+                                    <td class="open">30</td>
+                                    <td class="open">1</td>
+                                    <td class="open">2</td>
+                                    <td class="morning">3</td>
+                                    <td class="closed">4</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        </th>
+                        
+                    </tr>
+
+                    <tr>
+                        <th>
+
+                            <!--CALENDARIO DE MAYO-->
+                        <h3>Mayo 2025</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>L</th>
+                                    <th>M</th>
+                                    <th>X</th>
+                                    <th>J</th>
+                                    <th>V</th>
+                                    <th>S</th>
+                                    <th>D</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="open">28</td>
+                                    <td class="open">29</td>
+                                    <td class="open">30</td>
+                                    <td class="open">1</td>
+                                    <td class="open">2</td>
+                                    <td class="morning">3</td>
+                                    <td class="closed">4</td>
+                                </tr>
+                                <tr>
+                                    <td class="open">5</td>
+                                    <td class="closed">6</td>
+                                    <td class="morning">7</td>
+                                    <td class="open">8</td>
+                                    <td class="open">9</td>
+                                    <td class="morning">10</td>
+                                    <td class="closed">11</td>
+                                </tr>
+                                <tr>
+                                    <td class="open">12</td>
+                                    <td class="morning">13</td>
+                                    <td class="open">14</td>
+                                    <td class="open">15</td>
+                                    <td class="open">16</td>
+                                    <td class="morning">17</td>
+                                    <td class="closed">18</td>
+                                </tr>
+                                <tr>
+                                    <td class="morning">19</td>
+                                    <td class="open">20</td>
+                                    <td class="closed">21</td>
+                                    <td class="open">22</td>
+                                    <td class="open">23</td>
+                                    <td class="morning">24</td>
+                                    <td class="closed">25</td>
+                                </tr>
+                                <tr>
+                                    <td class="open">26</td>
+                                    <td class="closed">27</td>
+                                    <td class="closed">28</td>
+                                    <td class="closed">29</td>
+                                    <td class="closed">30</td>
+                                    <td class="closed">31</td>
+                                    <td class="closed">1</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        </th>
+
+                        <th>
+
+                            <!--CALENDARIO DE JUNIO-->
+                        <h3>Junio 2025</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>L</th>
+                                    <th>M</th>
+                                    <th>X</th>
+                                    <th>J</th>
+                                    <th>V</th>
+                                    <th>S</th>
+                                    <th>D</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="open">26</td>
+                                    <td class="closed">27</td>
+                                    <td class="closed">28</td>
+                                    <td class="closed">29</td>
+                                    <td class="closed">30</td>
+                                    <td class="closed">31</td>
+                                    <td class="closed">1</td>
+                                </tr>
+                                <tr>
+                                    <td class="closed">2</td>
+                                    <td class="closed">3</td>
+                                    <td class="morning">4</td>
+                                    <td class="open">5</td>
+                                    <td class="closed">6</td>
+                                    <td class="morning">7</td>
+                                    <td class="morning">8</td>
+                                </tr>
+                                <tr>
+                                    <td class="morning">9</td>
+                                    <td class="morning">10</td>
+                                    <td class="closed">11</td>
+                                    <td class="open">12</td>
+                                    <td class="closed">13</td>
+                                    <td class="morning">14</td>
+                                    <td class="closed">15</td>
+                                </tr>
+                                <tr>
+                                    <td class="morning">16</td>
+                                    <td class="open">17</td>
+                                    <td class="closed">18</td>
+                                    <td class="open">19</td>
+                                    <td class="open">20</td>
+                                    <td class="morning">21</td>
+                                    <td class="closed">22</td>
+                                </tr>
+                                <tr>
+                                    <td class="morning">23</td>
+                                    <td class="closed">24</td>
+                                    <td class="closed">25</td>
+                                    <td class="closed">26</td>
+                                    <td class="closed">27</td>
+                                    <td class="closed">28</td>
+                                    <td class="closed">29</td>
+                                </tr>
+                                <tr>
+                                    <td class="morning">30</td>
+                                    <td class="closed"></td>
+                                    <td class="closed"></td>
+                                    <td class="closed"></td>
+                                    <td class="closed"></td>
+                                    <td class="closed"></td>
+                                    <td class="closed"></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        </th>
+                    </tr>
+                </table>
+
+            </section>
+
+            <section class="tarifas">
+                <h2>Tarifas de Inscripción y Alquiler</h2>
+                <br>
+                <h3>Cuotas mensuales de socios</h3>
+                <table id="cuotas-socios">
+                    <thead>
+                        <tr>
+                            <th>Tipo de cuota</th>
+                            <th>Precio mensual</th>
+                            <th>Beneficios</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="basica">
+                            <td>Básica</td>
+                            <td>27,90€</td>
+                            <td>Acceso a todas las instalaciones</td>
+                        </tr>
+                        <tr id="FractalGym">
+                            <td>FractalGym</td>
+                            <td>35,90€</td>
+                            <td>Acceso total + taquilla propia + asesoramiento personal</td>
+                        </tr>
+                        <tr id="FractalGymPlus">
+                            <td>FractalGymPlus</td>
+                            <td>39,99€</td>
+                            <td>Todo lo anterior + parking gratuito</td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+                <h3>Inscripción anticipada por meses</h3>
+                <table id="anticipada">
+                    <thead>
+                        <tr>
+                            <th>Duración</th>
+                            <th>Precio total</th>
+                            <th>Precio por mes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 mes</td>
+                            <td>27,90€</td>
+                            <td>27,90€/mes</td>
+                        </tr>
+                        <tr>
+                            <td>3 meses</td>
+                            <td>78,00€</td>
+                            <td>26,00€/mes</td>
+                        </tr>
+                        <tr>
+                            <td>6 meses</td>
+                            <td>150,00€</td>
+                            <td>25,00€/mes</td>
+                        </tr>
+                        <tr>
+                            <td>12 meses</td>
+                            <td>276,00€</td>
+                            <td>23,00€/mes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="alquileres">
+                <h3>Alquiler de instalaciones (usuarios no abonados)</h3>
+                <table id="alquiler">
+                    <thead>
+                        <tr>
+                            <th>Instalación</th>
+                            <th>Precio por hora</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pistas de fútbol (7 / 11 / sala)</td>
+                            <td>12,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Pistas de baloncesto</td>
+                            <td>12,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Pistas de tenis</td>
+                            <td>10,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Pistas de pádel</td>
+                            <td>10,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Salas (Boxeo / Karate / Judo)</td>
+                            <td>25,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Piscinas (natación / waterpolo)</td>
+                            <td>25,00€</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+
+        </main>
+
+        <!--Pie de página-->
+        <footer>
+
+            <p>
+                &copy; 2025 Club deportivo 
+                <h4>FractalGym</h4>
+            </p>
+            <nav>
+                <a href="contacto.html">Contacto</a>
+                <a href="como_se_hizo.pdf">Cómo se hizo</a>
+            </nav>
+
+        </footer>
+
+
+
+    </body>
+
+
+
+
+</html>
